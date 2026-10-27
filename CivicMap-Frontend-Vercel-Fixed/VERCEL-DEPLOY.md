@@ -13,9 +13,13 @@ This is the frontend-only package. Keep the existing Render backend and MySQL da
 
 ## Environment variable
 
-Set `VITE_API_BASE_URL` to the existing Render backend origin, for example `https://your-service.onrender.com`, without a trailing slash. Do not guess the actual service URL; copy the existing Render service's public URL.
+The existing Render service shown in your deployment logs is `https://civicmap-backend-1.onrender.com`. The frontend package includes this as its production default in `.env.production`. If you set a Vercel environment variable, use `VITE_API_BASE_URL=https://civicmap-backend-1.onrender.com` (no `/api` suffix and no trailing slash), then redeploy.
 
 The frontend fetches public Supabase OAuth configuration from the existing backend endpoint `/api/system/public-config`. Keep Supabase service-role keys, database passwords, SMTP credentials, and JWT signing secrets only in Render's server environment. Never put them in Vercel variables or this frontend package.
+
+## Required Render CORS setting
+
+In Render → the existing `civicmap-backend-1` service → Environment, set `CLIENT_URL` to the exact deployed Vercel origin (for example `https://your-project.vercel.app`) and include the same origin in `CORS_ORIGINS`. If more than one frontend origin is used, separate origins with commas. Do not include a page path or trailing slash. Save and allow Render to restart.
 
 ## Verify after deployment
 

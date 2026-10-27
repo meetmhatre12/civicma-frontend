@@ -35,5 +35,5 @@ See `VERCEL-DEPLOY.md` for deployment configuration and verification steps.
 - Report history requests evidence metadata from `/api/evidence/issue/:issueId`; the API applies its owner/public visibility rules.
 - Dashboard counts are derived from issue records returned by the API, not from sample values.
 - The supplied backend currently does **not** expose a profile-avatar upload endpoint. The profile therefore does not show a misleading upload control or pretend that a profile image has been saved. Add persistent avatar storage and a backend endpoint before enabling that feature.
-- Set `VITE_API_BASE_URL` to the Render service origin only (for example, `https://your-service.onrender.com`), without `/api` at the end. The frontend adds `/api` to requests itself.
+- Set `VITE_API_BASE_URL` to the Render service origin only (for example, `https://civicmap-backend-1.onrender.com`), without `/api` at the end. The frontend adds `/api` to requests itself.
 - A production build was not verified in this environment because dependency installation timed out. Run `npm install` and `npm run build` before deploying.
