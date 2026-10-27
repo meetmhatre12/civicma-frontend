@@ -11,6 +11,6 @@ export default defineConfig({
     strictPort: true,
     proxy: { '/api': 'http://localhost:5000', '/uploads': 'http://localhost:5000' }
   },
-  build: { outDir: 'dist', emptyOutDir: true, sourcemap: false },
+  build: { outDir: 'build', emptyOutDir: true, sourcemap: false },
   resolve: { alias: { '@': path.resolve(__dirname, 'src') } }
 });

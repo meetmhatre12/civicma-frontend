@@ -9,8 +9,6 @@ export async function api(path,options={}){
  if(!response.ok||body?.success===false){const e=new Error(body?.error?.message||body?.message||body?.error||`Request failed (${response.status})`);e.status=response.status;e.code=body?.error?.code||'';throw e}
  return body;
 }
-export const issuesApi={list:()=>api('/issues'),create:(data)=>api('/issues',{method:'POST',body:JSON.stringify(data)})};
+export const issuesApi={list:()=>api('/issues'),listMine:()=>api('/issues?mine=true'),create:(data)=>api('/issues',{method:'POST',body:JSON.stringify(data)})};
 export const authApi={login:(email,password)=>api('/auth/login',{method:'POST',body:JSON.stringify({email,password})}),me:()=>api('/auth/me'),logout:()=>api('/auth/logout',{method:'POST'})};
 export const systemApi={health:()=>api('/system/health'),publicConfig:()=>api('/system/public-config')};
-
-export async function uploadEvidence(issueId, file, publicDisplay=false){const form=new FormData();form.append('photo',file);form.append('issue_id',String(issueId));form.append('public_display',publicDisplay?'true':'false');return api('/evidence/upload',{method:'POST',body:form});}
