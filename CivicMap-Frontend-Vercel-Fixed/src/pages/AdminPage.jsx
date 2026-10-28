@@ -16,7 +16,7 @@ export default function AdminPage(){
    if(current&&typeof current==='object'){setUser(current);localStorage.setItem('civicmap_user',JSON.stringify(current))}
    const currentRole=String(current?.role||user?.role||'').toUpperCase();
    if(!['ADMIN','SUPER_ADMIN'].includes(currentRole))throw new Error('Administrator access is required. Sign in with an active authorised administrator account.');
-   const results=await Promise.allSettled([api('/system/health'),api('/users'),api('/infrastructure'),api('/analytics/dashboard'),api('/system/activity-logs?limit=20')]);
+   const results=await Promise.allSettled([api('/health'),api('/users'),api('/infrastructure'),api('/analytics/dashboard'),api('/system/activity-logs?limit=20')]);
    const [h,u,a,k,l]=results;
    if(h.status==='fulfilled')setHealth(h.value.data||h.value);else setHealth({success:false,status:'unavailable',message:h.reason?.message||'Health check failed'});
    if(u.status==='fulfilled')setUsers(rowsOf(u.value));else throw new Error(u.reason?.message||'Could not load administrator user list.');
