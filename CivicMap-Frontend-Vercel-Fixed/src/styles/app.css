@@ -129,3 +129,22 @@ h1,h2,h3,h4,.brand{font-family:'Space Grotesk','DM Sans',sans-serif}
 @media(max-width:1000px){.about-hero{grid-template-columns:1fr 0.85fr;padding:34px;gap:26px}.about-pillar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-responsibility{grid-template-columns:auto minmax(0,1fr)}.about-responsibility>.btn{grid-column:2;justify-self:start}.about-bottom-cta{align-items:flex-start;flex-direction:column}.about-bottom-cta .about-hero-actions{margin-left:58px}}
 @media(max-width:700px){.about-page{padding-top:26px}.about-hero{grid-template-columns:1fr;padding:27px 22px 30px;border-radius:22px}.about-hero h1{font-size:clamp(2.35rem,10vw,3.4rem)}.about-visual{min-height:330px;margin:4px 0 10px}.about-map-grid{height:290px}.about-floating-card{right:0;bottom:-2px}.about-section-block,.about-workflow{padding-top:52px}.about-section-heading{display:block}.about-section-heading>p{margin-top:13px}.about-pillar-grid,.about-steps{grid-template-columns:1fr}.about-pillar{padding:22px}.about-pillar-icon{margin-bottom:14px}.about-step-arrow{display:none}.about-responsibility{grid-template-columns:1fr;padding:23px;gap:14px;margin-top:50px}.about-responsibility>.btn{grid-column:1}.about-bottom-cta{padding:25px 22px;margin-top:20px}.about-bottom-cta .about-hero-actions{margin-left:0;width:100%}.about-bottom-cta .about-hero-actions .btn{flex:1}.about-bottom-cta>div:first-child{padding-left:0;padding-top:53px}.about-cta-icon{top:0}}
 @media(max-width:390px){.about-hero-actions{flex-direction:column}.about-hero-actions .btn{width:100%}.about-map-legend{font-size:.61rem}.about-floating-card{left:8px;right:8px;bottom:-13px}.about-visual{margin-bottom:18px}.about-responsibility .btn{white-space:normal}.about-bottom-cta .about-hero-actions{flex-direction:column}}
+
+
+/* CivicMap infrastructure registration and administration tables */
+.page-actions{display:flex;gap:.65rem;align-items:center;flex-wrap:wrap}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.form-grid label{display:flex;flex-direction:column;gap:.45rem;min-width:0;font-weight:600}
+.form-grid input,.form-grid select,.form-grid textarea,.search-field input{width:100%;min-width:0;box-sizing:border-box}
+.form-full{grid-column:1/-1}
+.chart-card h2{display:flex;align-items:center;gap:.5rem}
+.admin-users{margin:1.25rem 0}
+.table-scroll{width:100%;overflow-x:auto}
+.table-scroll table{width:100%;border-collapse:collapse;min-width:650px}
+.table-scroll th,.table-scroll td{text-align:left;padding:.8rem .7rem;border-bottom:1px solid var(--border,#e2e8f0);vertical-align:top}
+.table-scroll th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted,#64748b)}
+.table-scroll td small{overflow-wrap:anywhere}
+.api-summary{margin-top:1.25rem;padding:1rem;border:1px solid var(--border,#e2e8f0);border-radius:1rem;overflow:hidden}
+.api-summary summary{cursor:pointer;font-weight:600}
+.api-summary pre{max-height:28rem;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem}
+@media(max-width:700px){.form-grid{grid-template-columns:minmax(0,1fr)}.form-full{grid-column:auto}.page-actions{width:100%}.page-actions .btn{flex:1}.page-title-row{align-items:flex-start;gap:1rem}.table-scroll table{min-width:580px}}
