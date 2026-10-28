@@ -12,5 +12,5 @@ export async function api(path,options={}){
  return body;
 }
 export const issuesApi={list:()=>api('/issues'),listMine:()=>api('/issues?mine=true'),create:(data)=>api('/issues',{method:'POST',body:JSON.stringify(data)})};
-export const authApi={login:(email,password)=>api('/auth/login',{method:'POST',body:JSON.stringify({email,password})}),me:()=>api('/auth/me'),logout:()=>api('/auth/logout',{method:'POST'})};
+export const authApi={login:(email,password)=>api('/auth/login',{method:'POST',body:JSON.stringify({email,password})}),adminLogin:(usernameOrEmail,password)=>api('/auth/admin-login',{method:'POST',body:JSON.stringify({username:usernameOrEmail,email:usernameOrEmail,password})}),me:()=>api('/auth/me'),logout:()=>api('/auth/logout',{method:'POST'})};
 export const systemApi={health:()=>api('/system/health'),publicConfig:()=>api('/system/public-config')};
